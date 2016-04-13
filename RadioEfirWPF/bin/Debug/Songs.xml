@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfSong xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Song>
+    <Artist>Three Days Grace</Artist>
+    <SongName>Last to know</SongName>
+    <Album>Life starts now</Album>
+    <Year>2009</Year>
+    <Rating>4</Rating>
+    <PathToSong>...</PathToSong>
+    <PathToPhoto>...</PathToPhoto>
+  </Song>
+  <Song>
+    <Artist>Three Days Grace</Artist>
+    <SongName>Human</SongName>
+    <Album>Human</Album>
+    <Year>2015</Year>
+    <Rating>3</Rating>
+    <PathToSong>...</PathToSong>
+    <PathToPhoto>...</PathToPhoto>
+  </Song>
+  <Song>
+    <Artist>Deep Purple</Artist>
+    <SongName>Smoke on the water</SongName>
+    <Album>The platinum collection</Album>
+    <Year>1998</Year>
+    <Rating>5</Rating>
+    <PathToSong>...</PathToSong>
+    <PathToPhoto>...</PathToPhoto>
+  </Song>
+  <Song>
+    <Artist>Мумий тролль</Artist>
+    <SongName>С чистого листа</SongName>
+    <Album>С чистого листа</Album>
+    <Year>2014</Year>
+    <Rating>5</Rating>
+    <PathToSong>D:\Учёба\2 курс\4 семестр\алгоритмы и структуры\RadioEfirWPF\RadioEfirWPF\bin\Debug\Мумий тролль – С чистого листа.mp3</PathToSong>
+    <PathToPhoto>D:\Фотки\VK\S_20g62tySk.jpg</PathToPhoto>
+  </Song>
+  <Song>
+    <Artist>Blue oyster colt</Artist>
+    <SongName>Dont fear the reaper</SongName>
+    <Album>The reaper</Album>
+    <Year>1976</Year>
+    <Rating>5</Rating>
+    <PathToSong>D:\Музыка\Blue yster Cult – Dont Fear The Reaper.mp3</PathToSong>
+    <PathToPhoto>D:\Учёба\2 курс\4 семестр\алгоритмы и структуры\RadioEfirWPF\RadioEfirWPF\bin\Debug\Blue_Oyster_Cult.png</PathToPhoto>
+  </Song>
+</ArrayOfSong>

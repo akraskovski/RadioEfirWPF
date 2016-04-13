@@ -1,0 +1,32 @@
+﻿<Window x:Class="RadioEfirWPF.editSongInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RadioEfirWPF"
+        mc:Ignorable="d"
+        Title="editSongInfoWindow" Height="444" Width="706" Closing="Window_Closing">
+    <Grid>
+        <GroupBox x:Name="groupBox" Header="Write information" HorizontalAlignment="Left" Margin="10,10,-9,-129" VerticalAlignment="Top" Height="388" Width="291">
+            <StackPanel>
+                <Label x:Name="artistLabel" Height="30" FontSize="16" FontFamily="Book Antiqua" Content="Artist:"/>
+                <TextBox x:Name="artistTextBox" Height="30" FontSize="16"/>
+                <Label x:Name="songNameLabel" Height="30" FontSize="16" FontFamily="Book Antiqua" Content="Song name:"/>
+                <TextBox x:Name="songNameTextBox" Height="30" FontSize="16"/>
+                <Label x:Name="albumLabel" Height="30" FontSize="16" FontFamily="Book Antiqua" Content="Album name:"/>
+                <TextBox x:Name="albumTextBox" Height="30" FontSize="16"/>
+                <Label x:Name="yearLabel" Height="30" FontSize="16" FontFamily="Book Antiqua" Content="Year:"/>
+                <TextBox x:Name="yearTextBox" Height="30" FontSize="16"/>
+                <Label x:Name="ratingLabel" Height="30" FontSize="16" FontFamily="Book Antiqua" Content="Rating:"/>
+                <TextBox x:Name="ratingTextBox" Height="30" FontSize="16"/>
+                <Label x:Name="pathLabel" Height="30" FontSize="16" FontFamily="Book Antiqua" Content="Path to song:"/>
+                <TextBox x:Name="songPathTextBox" Height="30" FontSize="16" Margin="0,0,48,0"/>
+            </StackPanel>
+        </GroupBox>
+        <Button x:Name="editButton" Content="EDIT" HorizontalAlignment="Left" Margin="563,369,-380,-129" VerticalAlignment="Top" Width="109" Height="29" FontSize="16" Click="editButton_Click"/>
+        <Button x:Name="pathButton" Content="..." HorizontalAlignment="Left" Margin="256,357,0,-117" VerticalAlignment="Top" Width="30" Height="29" FontSize="16" Click="pathButton_Click"/>
+        <Image x:Name="img" HorizontalAlignment="Left" Height="257" Margin="327,24,-371,-12" VerticalAlignment="Top" Width="336"/>
+        <Button x:Name="photoButton" Content="Choose Photo" HorizontalAlignment="Left" Margin="459,286,-251,-37" VerticalAlignment="Top" Width="84" Click="photoButton_Click"/>
+
+    </Grid>
+</Window>

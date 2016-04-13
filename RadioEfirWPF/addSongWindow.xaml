@@ -1,0 +1,34 @@
+﻿<Window x:Class="RadioEfirWPF.addSongWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RadioEfirWPF"
+        mc:Ignorable="d"
+        Title="addSongWindow" Height="439" Width="690" Closing="Window_Closing">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <GroupBox x:Name="groupBox" Header="Write information" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="388" Width="291">
+            <StackPanel>
+                <Label x:Name="artistLabel" Height="30" FontSize="16" FontFamily="Book Antiqua">Artist:</Label>
+                <TextBox x:Name="artistTextBox" Height="30" FontSize="16"></TextBox>
+                <Label x:Name="songNameLabel" Height="30" FontSize="16" FontFamily="Book Antiqua">Song name:</Label>
+                <TextBox x:Name="songNameTextBox" Height="30" FontSize="16"></TextBox>
+                <Label x:Name="albumLabel" Height="30" FontSize="16" FontFamily="Book Antiqua">Album name:</Label>
+                <TextBox x:Name="albumTextBox" Height="30" FontSize="16"></TextBox>
+                <Label x:Name="yearLabel" Height="30" FontSize="16" FontFamily="Book Antiqua">Year:</Label>
+                <TextBox x:Name="yearTextBox" Height="30" FontSize="16"></TextBox>
+                <Label x:Name="ratingLabel" Height="30" FontSize="16" FontFamily="Book Antiqua">Rating:</Label>
+                <TextBox x:Name="ratingTextBox" Height="30" FontSize="16"></TextBox>
+                <Label x:Name="pathLabel" Height="30" FontSize="16" FontFamily="Book Antiqua">Path to song:</Label>
+                <TextBox x:Name="songPathTextBox" Height="30" FontSize="16" Margin="0,0,48,0"></TextBox>
+            </StackPanel>
+        </GroupBox>
+        <Button x:Name="createButton" Content="ADD" HorizontalAlignment="Left" Margin="563,369,0,0" VerticalAlignment="Top" Width="109" Click="createButton_Click" Height="29"/>
+        <Button x:Name="pathButton" Content="..." HorizontalAlignment="Left" Margin="256,357,0,0" VerticalAlignment="Top" Width="30" Height="29" FontSize="16" Click="pathButton_Click"/>
+        <Image x:Name="img" HorizontalAlignment="Left" Height="257" Margin="327,24,0,0" VerticalAlignment="Top" Width="336"/>
+        <Button x:Name="photoButton" Content="Choose Photo" HorizontalAlignment="Left" Margin="459,286,0,0" VerticalAlignment="Top" Width="84" Click="photoButton_Click"/>
+    </Grid>
+</Window>
