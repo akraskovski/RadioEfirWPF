@@ -16,3 +16,21 @@ D:\Учёба\2 курс\4 семестр\алгоритмы и структур
 D:\Учёба\2 курс\4 семестр\алгоритмы и структуры\RadioEfirWPF\RadioEfirWPF\obj\Debug\addSongWindow.baml
 D:\Учёба\2 курс\4 семестр\алгоритмы и структуры\RadioEfirWPF\RadioEfirWPF\obj\Debug\editSongInfoWindow.g.cs
 D:\Учёба\2 курс\4 семестр\алгоритмы и структуры\RadioEfirWPF\RadioEfirWPF\obj\Debug\editSongInfoWindow.baml
+D:\Учёба\2 курс\4 семестр\github\RadioEfirWPF\RadioEfirWPF\bin\Debug\RadioEfirWPF.exe.config
+D:\Учёба\2 курс\4 семестр\github\RadioEfirWPF\RadioEfirWPF\obj\Debug\RadioEfirWPF.exe
+D:\Учёба\2 курс\4 семестр\github\RadioEfirWPF\RadioEfirWPF\obj\Debug\RadioEfirWPF.pdb
+D:\Учёба\2 курс\4 семестр\github\RadioEfirWPF\RadioEfirWPF\bin\Debug\RadioEfirWPF.exe
+D:\Учёба\2 курс\4 семестр\github\RadioEfirWPF\RadioEfirWPF\bin\Debug\RadioEfirWPF.pdb
+D:\Учёба\2 курс\4 семестр\github\RadioEfirWPF\RadioEfirWPF\obj\Debug\RadioEfirWPF.csprojResolveAssemblyReference.cache
+D:\Учёба\2 курс\4 семестр\github\RadioEfirWPF\RadioEfirWPF\obj\Debug\addSongWindow.g.cs
+D:\Учёба\2 курс\4 семестр\github\RadioEfirWPF\RadioEfirWPF\obj\Debug\editSongInfoWindow.g.cs
+D:\Учёба\2 курс\4 семестр\github\RadioEfirWPF\RadioEfirWPF\obj\Debug\MainWindow.g.cs
+D:\Учёба\2 курс\4 семестр\github\RadioEfirWPF\RadioEfirWPF\obj\Debug\App.g.cs
+D:\Учёба\2 курс\4 семестр\github\RadioEfirWPF\RadioEfirWPF\obj\Debug\RadioEfirWPF_MarkupCompile.cache
+D:\Учёба\2 курс\4 семестр\github\RadioEfirWPF\RadioEfirWPF\obj\Debug\RadioEfirWPF_MarkupCompile.lref
+D:\Учёба\2 курс\4 семестр\github\RadioEfirWPF\RadioEfirWPF\obj\Debug\addSongWindow.baml
+D:\Учёба\2 курс\4 семестр\github\RadioEfirWPF\RadioEfirWPF\obj\Debug\editSongInfoWindow.baml
+D:\Учёба\2 курс\4 семестр\github\RadioEfirWPF\RadioEfirWPF\obj\Debug\MainWindow.baml
+D:\Учёба\2 курс\4 семестр\github\RadioEfirWPF\RadioEfirWPF\obj\Debug\RadioEfirWPF.g.resources
+D:\Учёба\2 курс\4 семестр\github\RadioEfirWPF\RadioEfirWPF\obj\Debug\RadioEfirWPF.Properties.Resources.resources
+D:\Учёба\2 курс\4 семестр\github\RadioEfirWPF\RadioEfirWPF\obj\Debug\RadioEfirWPF.csproj.GenerateResource.Cache

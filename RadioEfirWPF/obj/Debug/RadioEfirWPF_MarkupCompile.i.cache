@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Учёба\2 курс\4 семестр\алгоритмы и структуры\RadioEfirWPF\RadioEfirWPF\obj\Debug\
+D:\Учёба\2 курс\4 семестр\github\RadioEfirWPF\RadioEfirWPF\obj\Debug\
 RadioEfirWPF
 none
 false
 DEBUG;TRACE
-D:\Учёба\2 курс\4 семестр\алгоритмы и структуры\RadioEfirWPF\RadioEfirWPF\App.xaml
+D:\Учёба\2 курс\4 семестр\github\RadioEfirWPF\RadioEfirWPF\App.xaml
 31741635410
 
-14-413231362
+15358055140
 13738642453
 addSongWindow.xaml;editSongInfoWindow.xaml;MainWindow.xaml;
 
-False
+True
 

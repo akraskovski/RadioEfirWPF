@@ -5,14 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RadioEfirWPF"
         mc:Ignorable="d"
-        Title="Radio" Height="593.666" Width="1003" ResizeMode="NoResize" Closing="Window_Closing">
+        Title="Radio" Height="593.666" Width="734.5" ResizeMode="NoResize" Closing="Window_Closing">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Image x:Name="img" HorizontalAlignment="Left" Height="237" Margin="618,21,0,0" VerticalAlignment="Top" Width="352"/>
-        <TabControl Margin="0,0,757,362">
-            <TabItem Header="Library">
+        <Image x:Name="img" HorizontalAlignment="Left" Height="237" Margin="398,46,0,0" VerticalAlignment="Top" Width="307"/>
+        <TabControl Margin="0,0,488,362">
+            <TabItem Header="Library" MouseLeftButtonUp="TabItem_MouseLeftButtonUp_1">
                 <GroupBox x:Name="groupBox" Header="Controls" HorizontalAlignment="Left" Margin="10,9,0,0" VerticalAlignment="Top" Height="156" Width="211">
                     <StackPanel>
                         <Button x:Name="allSongs" Content="Show all songs" Height="33" Click="allSongs_Click" />
@@ -22,11 +22,20 @@
                     </StackPanel>
                 </GroupBox>
             </TabItem>
-            <TabItem Header="Playlist"></TabItem>
+            <TabItem Header="Playlist" MouseLeftButtonUp="TabItem_MouseLeftButtonUp">
+                <GroupBox x:Name="groupBox1" Header="Controls" HorizontalAlignment="Left" Margin="10,9,0,0" VerticalAlignment="Top" Height="156" Width="211">
+                    <StackPanel>
+                        <Button x:Name="allPlaylists" Content="Show all playlists" Height="33" Click="allPlaylists_Click"/>
+                        <Button x:Name="addPlaylist" Content="Add playlist" Height="33"/>
+                        <Button x:Name="editPlaylist" Content="Edit information about playlist" Height="33"/>
+                        <Button x:Name="delPlaylist" Content="Delete playlist" Height="33"/>
+                    </StackPanel>
+                </GroupBox>
+            </TabItem>
         </TabControl>
-        <ListBox x:Name="songsBox" HorizontalAlignment="Left" Height="337" Margin="10,208,0,0" VerticalAlignment="Top" Width="230" BorderThickness="2,3,3,3" SelectionChanged="songsBox_SelectionChanged"/>
+        <ListBox x:Name="musicBox" HorizontalAlignment="Left" Height="337" Margin="10,208,0,0" VerticalAlignment="Top" Width="230" BorderThickness="2,3,3,3" SelectionChanged="musicBox_SelectionChanged"/>
         <Button x:Name="clearSongsBoxButton" Content="Clear" HorizontalAlignment="Left" Margin="245,525,0,0" VerticalAlignment="Top" Width="75" Click="clearSongsBoxButton_Click"/>
-        <Grid HorizontalAlignment="Left" Height="179" Margin="618,366,0,0" VerticalAlignment="Top" Width="352" ShowGridLines="True">
+        <Grid x:Name="infoGrid" HorizontalAlignment="Left" Height="179" Margin="322,341,0,0" VerticalAlignment="Top" Width="352" ShowGridLines="True" Visibility="Hidden">
             <Grid.RowDefinitions>
                 <RowDefinition></RowDefinition>
                 <RowDefinition></RowDefinition>
@@ -49,9 +58,9 @@
             <Label x:Name="yearText" Grid.Row="3" Grid.Column="1" FontSize="14.667"></Label>
             <Label x:Name="ratingText" Grid.Row="4" Grid.Column="1" FontSize="14.667"></Label>
         </Grid>
-        <Button x:Name="playButton" Content="Play" HorizontalAlignment="Left" Margin="693,310,0,0" VerticalAlignment="Top" Width="75" Click="playButton_Click"/>
-        <Button x:Name="stopButton" Content="Stop" HorizontalAlignment="Left" Margin="788,310,0,0" VerticalAlignment="Top" Width="75" Click="stopButton_Click"/>
-        <Label x:Name="timeLabel" Content="" HorizontalAlignment="Left" Margin="698,279,0,0" VerticalAlignment="Top" Width="165"/>
-
+        <Button x:Name="playButton" Content="Play" HorizontalAlignment="Left" Margin="438,316,0,0" VerticalAlignment="Top" Width="74" Click="playButton_Click" Visibility="Hidden"/>
+        <Button x:Name="stopButton" Content="Stop" HorizontalAlignment="Left" Margin="522,316,0,0" VerticalAlignment="Top" Width="75" Click="stopButton_Click" Visibility="Hidden"/>
+        <ListBox x:Name="playlistsBox" HorizontalAlignment="Left" Height="242" Margin="245,41,0,0" VerticalAlignment="Top" Width="148" SelectionChanged="playlistsBox_SelectionChanged" Visibility="Hidden"/>
+        <Label x:Name="playlistLabel" Content="Playlists:" HorizontalAlignment="Left" Margin="245,15,0,0" VerticalAlignment="Top" Visibility="Hidden"/>
     </Grid>
 </Window>

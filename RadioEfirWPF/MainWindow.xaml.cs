@@ -21,6 +21,7 @@ namespace RadioEfirWPF
     public partial class MainWindow : Window
     {
         private static List<Song> musicLibrary = new List<Song>();
+        private static List<Playlist> playlists = new List<Playlist>();
         private MediaPlayer player = new MediaPlayer();
         public MainWindow()
         {
@@ -30,52 +31,65 @@ namespace RadioEfirWPF
         static void read() //read from file
         {
             WorkWithFiles w = new WorkWithFiles();
-            w.readFromFile();
-            musicLibrary = w.ReadCollection;
+            w.readSongsFromFile();
+            musicLibrary = w.ReadSongsCollection;
+            w.readPlaylistsFromFile();
+            playlists = w.ReadPlaylistsCollection;
         }
         private void fillSongsBox() //write songs in listbox
         {
-            songsBox.Items.Clear();
+            musicBox.Items.Clear();
             for (int i = 0; i < musicLibrary.Count; i++)
-            {
-                songsBox.Items.Add(musicLibrary[i].Artist + " - " + musicLibrary[i].SongName);
-            }
+                musicBox.Items.Add(musicLibrary[i].Artist + " - " + musicLibrary[i].SongName);
         }
+        private void fillPlaylists()
+        {
+            playlistsBox.Items.Clear();
+            for (int i = 0; i < playlists.Count; i++)
+                playlistsBox.Items.Add(playlists[i].Name);
+        } //write playlists in listbox
         private void allSongs_Click(object sender, RoutedEventArgs e) //run function to see all songs
         {
             fillSongsBox();
         }
-        private void clearSongsBoxButton_Click(object sender, RoutedEventArgs e) //clear songsbox
+        private void clearAll()
         {
-            //timeLabel.Content = "";
             artistText.Content = "";
             songText.Content = "";
             albumText.Content = "";
             yearText.Content = "";
             ratingText.Content = "";
-            songsBox.Items.Clear();
+            musicBox.Items.Clear();
             img.Source = null;
+            playlistsBox.Items.Clear();
+            playButton.Visibility = Visibility.Hidden;
+            stopButton.Visibility = Visibility.Hidden;
+            infoGrid.Visibility = Visibility.Hidden;
+        }
+        private void clearSongsBoxButton_Click(object sender, RoutedEventArgs e) //clear songsbox
+        {
+            clearAll();
         }
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e) //writing to xml file, if program is closing
         {
             WorkWithFiles w = new WorkWithFiles();
-            w.writeToFile(musicLibrary);
+            w.writeSongsToFile(musicLibrary);
+            w.writePlaylistsToFile(playlists);
         }
         private void addSong_Click(object sender, RoutedEventArgs e) //open new window to add song
         {
-            songsBox.Items.Clear();
+            musicBox.Items.Clear();
             addSongWindow addWindow = new addSongWindow();
             if (addWindow.ShowDialog() != null && addWindow.inputCheck == true)
                 musicLibrary.Add(addWindow.tmp);
         }
-
         private void delSong_Click(object sender, RoutedEventArgs e) //deleting song from collection
         {
             Song tmp = new Song();
-            if (songsBox.SelectedItem != null)
+            if (musicBox.SelectedItem != null)
             {
                 for (int i = 0; i < musicLibrary.Count; i++)
-                    if (musicLibrary[i].Artist + " - " + musicLibrary[i].SongName == songsBox.SelectedValue.ToString())
+                    if (musicLibrary[i].Artist + " - " + musicLibrary[i].SongName == musicBox.SelectedValue.ToString())
                     {
                         musicLibrary.Remove(musicLibrary[i]);
                         break;
@@ -85,13 +99,16 @@ namespace RadioEfirWPF
             else
                 MessageBox.Show("Please, choose song.");
         }
-        private void setInfo() //fills information
+        private void setInfoForSongs() //fill information
         {
             img.Source = null;
-            if (songsBox.SelectedItem != null)
+            if (musicBox.SelectedItem != null)
             {
+                playButton.Visibility = Visibility.Visible;
+                stopButton.Visibility = Visibility.Visible;
+                infoGrid.Visibility = Visibility.Visible;
                 for (int i = 0; i < musicLibrary.Count; i++)
-                    if (musicLibrary[i].Artist + " - " + musicLibrary[i].SongName == songsBox.SelectedValue.ToString())
+                    if (musicLibrary[i].Artist + " - " + musicLibrary[i].SongName == musicBox.SelectedValue.ToString())
                     {
                         artistText.Content = musicLibrary[i].Artist;
                         songText.Content = musicLibrary[i].SongName;
@@ -106,17 +123,19 @@ namespace RadioEfirWPF
                     }
             }
         }
-        private void songsBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void setInfoForPlaylist(int index) //fill information
         {
-            setInfo();
+            musicBox.Items.Clear();
+            for (int i = 0; i < playlists[index].Songs.Count; i++)
+                musicBox.Items.Add(playlists[index].Songs[i].Artist + " - " + playlists[index].Songs[i].SongName);
+        }
+        private void musicBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            setInfoForSongs();
         }
         private void playButton_Click(object sender, RoutedEventArgs e)
         {
-            player.Play();  
-        }
-        private void pauseButton_Click(object sender, RoutedEventArgs e)
-        {
-            player.Pause();
+            player.Play();
         }
         private void stopButton_Click(object sender, RoutedEventArgs e)
         {
@@ -124,21 +143,42 @@ namespace RadioEfirWPF
         }
         private void editSong_Click(object sender, RoutedEventArgs e)
         {
-            if (songsBox.SelectedItem != null)
+            if (musicBox.SelectedItem != null)
             {
                 for (int i = 0; i < musicLibrary.Count; i++)
-                { 
-                    if (musicLibrary[i].Artist + " - " + musicLibrary[i].SongName == songsBox.SelectedValue.ToString())
+                    if (musicLibrary[i].Artist + " - " + musicLibrary[i].SongName == musicBox.SelectedValue.ToString())
                     {
                         editSongInfoWindow editSong = new editSongInfoWindow(musicLibrary[i]);
                         if (editSong.ShowDialog() != null && editSong.inputCheck == true)
                             musicLibrary[i] = editSong.tmp;
                         break;
                     }
-                }
             }
             else
                 MessageBox.Show("Ошибка!");
         }
+
+        private void allPlaylists_Click(object sender, RoutedEventArgs e)
+        {
+            fillPlaylists();
+        }
+
+        private void playlistsBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (playlistsBox.SelectedIndex > -1)
+                setInfoForPlaylist(playlistsBox.SelectedIndex);
+        }
+        private void TabItem_MouseLeftButtonUp_1(object sender, MouseButtonEventArgs e)
+        {
+            playlistsBox.Visibility = Visibility.Hidden;
+            playlistLabel.Visibility = Visibility.Hidden;
+            clearAll();
+        } //for library
+        private void TabItem_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            playlistsBox.Visibility = Visibility.Visible;
+            playlistLabel.Visibility = Visibility.Visible;
+            clearAll();
+        } //for playlists
     }
 }

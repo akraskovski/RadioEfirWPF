@@ -61,6 +61,7 @@
     <Compile Include="editSongInfoWindow.xaml.cs">
       <DependentUpon>editSongInfoWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Playlist.cs" />
     <Compile Include="Search.cs" />
     <Compile Include="Song.cs" />
     <Compile Include="WorkWithFiles.cs" />

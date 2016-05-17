@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfPlaylist xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Playlist>
+    <Songs>
+      <Song>
+        <Artist>Мумий тролль</Artist>
+        <SongName>С чистого листа</SongName>
+        <Album>С чистого листа</Album>
+        <Year>2014</Year>
+        <Rating>5</Rating>
+        <PathToSong>D:\Учёба\2 курс\4 семестр\алгоритмы и структуры\RadioEfirWPF\RadioEfirWPF\bin\Debug\Мумий тролль – С чистого листа.mp3</PathToSong>
+        <PathToPhoto>D:\Фотки\VK\S_20g62tySk.jpg</PathToPhoto>
+      </Song>
+      <Song>
+        <Artist>Blue oyster colt</Artist>
+        <SongName>Dont fear the reaper</SongName>
+        <Album>The reaper</Album>
+        <Year>1976</Year>
+        <Rating>5</Rating>
+        <PathToSong>D:\Музыка\Blue yster Cult – Dont Fear The Reaper.mp3</PathToSong>
+        <PathToPhoto>D:\Учёба\2 курс\4 семестр\алгоритмы и структуры\RadioEfirWPF\RadioEfirWPF\bin\Debug\Blue_Oyster_Cult.png</PathToPhoto>
+      </Song>
+    </Songs>
+    <CountOfSongs>2</CountOfSongs>
+    <Name>My first playlist</Name>
+  </Playlist>
+</ArrayOfPlaylist>
